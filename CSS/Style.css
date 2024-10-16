@@ -1,0 +1,54 @@
+body {
+    background-image: url(../Imagenes/frente.png);
+    background-size: cover;
+}
+
+/*----------------CARGAR----------------*/
+.container-carga{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.btn{
+    height: 40px;
+    margin-left: 20px;
+}
+
+.form-control{
+    width: 450px;
+}
+/*----------------FIN CARGAR----------------*/
+
+/*----------------TABLA----------------*/
+.container-table, .container-tabla1 {
+    display: flex;
+    margin-top: 10px;
+    padding: 0px; /* Un poco de padding para evitar que la tabla toque los bordes */
+}
+
+table {
+    width: 100%; /* Asegura que la tabla tome todo el ancho disponible */
+    table-layout: auto; /* Deja que la tabla ajuste el ancho según su contenido */
+    border-collapse: collapse; /* Hace que las celdas compartan bordes */
+}
+
+thead th, tbody td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+thead th {
+    white-space: nowrap; /* Evita que los títulos de las columnas se rompan en varias líneas */
+    padding: 12px;
+}
+
+tbody td {
+    padding: 10px;
+    background-color: #343a40; /* Fondo oscuro para las filas */
+    color: #ffffff; /* Texto blanco en las filas */
+    border: 1px solid #dddddd; /* Borde para separar las filas */
+}
+
+/*----------------FIN TABLA----------------*/
