@@ -46,8 +46,6 @@ thead th {
 
 tbody td {
     padding: 10px;
-    background-color: #343a40; /* Fondo oscuro para las filas */
-    color: #ffffff; /* Texto blanco en las filas */
     border: 1px solid #dddddd; /* Borde para separar las filas */
 }
 

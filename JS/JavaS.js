@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Archivo cargado correctamente');
 
         cargarDatosTabla();
-        cargarTitulos();
+        cargarTitulos(datos, 5, document.querySelector('#dataTable'));
+        cargarTitulos(delitos, 0, document.querySelector('#dataTable1'));
     })
 
     function cargarDatosTabla() {
@@ -69,10 +70,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const tr = document.createElement('tr');
             row.forEach((cell, index) => {
                 const td = document.createElement('td');
-                td.textContent=formatCell(cell,index); //VERIFICAR CELDA DE FECHA O HORA
+                td.textContent = formatCell(cell, index); //VERIFICAR CELDA DE FECHA O HORA
                 tr.appendChild(td);
 
-                if (index === 5) {  //CARGAR LISTA CAUSAS
+                if (index === 5 && cell !== '-') {  //CARGAR LISTA CAUSAS
                     procesarCausa(cell);
                 }
             });
@@ -122,13 +123,12 @@ document.addEventListener('DOMContentLoaded', function () {
         delitos.push([causa, 1]);
     }
 
-    function cargarTitulos() {
+    function cargarTitulos(Titulos, p, table) {
         // Carga los títulos en la tabla
-        const table = document.querySelector('#dataTable');
         const thead = table.querySelector('thead');
         thead.innerHTML = '';
         const tr = document.createElement('tr');
-        datos[5].forEach((titulo) => {
+        Titulos[p].forEach((titulo) => {
             const th = document.createElement('th');
             th.textContent = titulo;
             tr.appendChild(th);
