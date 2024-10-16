@@ -69,13 +69,17 @@ document.addEventListener('DOMContentLoaded', function () {
         datos.slice(6).forEach((row) => {
             const tr = document.createElement('tr');
             row.forEach((cell, index) => {
-                const td = document.createElement('td');
-                td.textContent = formatCell(cell, index); //VERIFICAR CELDA DE FECHA O HORA
-                tr.appendChild(td);
+                if (!isNaN(row[1])) {
+                    const td = document.createElement('td');
+                    td.textContent = formatCell(cell, index); //VERIFICAR CELDA DE FECHA O HORA
+                    tr.appendChild(td);
 
-                if (index === 5 && cell !== '-') {  //CARGAR LISTA CAUSAS
-                    procesarCausa(cell);
+                    if (index === 5 && cell !== '-') {  //CARGAR LISTA CAUSAS
+                        procesarCausa(cell);
+                    }
+
                 }
+
             });
             tbody.appendChild(tr);
         });
